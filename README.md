@@ -1,4 +1,4 @@
-# ToDoApplicationProgect
+# ToDoApplicationProject
 Приложение для списка дел. 
 Функции Добавления, Редактирования, Удаления задач.
 Язык разработки C# 
