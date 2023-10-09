@@ -5,7 +5,7 @@
 Используемые технологии WPF.<br />
 Среда разработки  Microsoft Visual studio.<br />
 База данных Microsoft SQL Server.<br />
-Операционная система Windows
+Операционная система Windows<br />
 <div align="center">
   <img src="https://media.giphy.com/media/dWesBcTLavkZuG35MI/giphy.gif" width="600" height="300"/>
 </div>
