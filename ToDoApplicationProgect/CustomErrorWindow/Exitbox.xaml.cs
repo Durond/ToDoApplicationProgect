@@ -11,25 +11,27 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using ToDoApplicationProgect.CustomErrorWindow;
 
-namespace ToDoApplicationProgect
+namespace ToDoApplicationProgect.CustomErrorWindow
 {
-   
-    public partial class MainWindow : Window
+    /// <summary>
+    /// Логика взаимодействия для Exitbox.xaml
+    /// </summary>
+    public partial class Exitbox : Window
     {
-        public MainWindow()
+        public Exitbox()
         {
             InitializeComponent();
         }
-
-        private void Exit(object sender, RoutedEventArgs e)
+        private void Click_Exit(object sender, RoutedEventArgs e)
         {
-            Exitbox er1 = new Exitbox();
-            er1.Height = 130;
-            er1.Width = 300;
-            er1.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            er1.ShowDialog();
+            Application.Current.Shutdown();
         }
+
+        private void Back_Click(object sender, RoutedEventArgs e)
+        {
+           Close();
+        }
+
     }
 }
