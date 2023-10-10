@@ -38,5 +38,10 @@ namespace ToDoApplicationProgect
         {
             myFrame.Navigate(new ShowPage.TaskPage());
         }
+
+        private void Category_Click(object sender, RoutedEventArgs e)
+        {
+            myFrame.Navigate(new ShowPage.CategoryPage());
+        }
     }
 }

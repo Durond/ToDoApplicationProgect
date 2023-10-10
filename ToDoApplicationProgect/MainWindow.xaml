@@ -52,7 +52,7 @@
              
              
               
-                <Button  Style="{StaticResource menuButton}">
+                <Button  Style="{StaticResource menuButton}" Click="Category_Click">
                     <StackPanel Orientation="Horizontal">
                         <TextBlock  Text="Category" Style="{StaticResource menuButtonText}" />
                     </StackPanel>
