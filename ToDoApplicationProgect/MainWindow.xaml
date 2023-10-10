@@ -5,12 +5,45 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ToDoApplicationProgect"
         mc:Ignorable="d"
-          Height="740" Width="1080" WindowStartupLocation="CenterScreen" WindowStyle="None" AllowsTransparency="True" Background="Aquamarine">
+          Height="740" Width="1080" WindowStartupLocation="CenterScreen" WindowStyle="None"
+        AllowsTransparency="True" Background="Transparent">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="250"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
+        <Border CornerRadius="10 0 0 10">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                    <GradientStop Color="#0667b3" Offset="0"/>
+                    <GradientStop Color="#0067b3" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            
+            <StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 35 0 0">
+                    <Border CornerRadius="10" Width="40" Height="40">
+                        <Border.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                                <GradientStop Color="#7f7cf1" Offset="0"/>
+                                <GradientStop Color="#d3b7ff" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Border.Background>
+
+                        <TextBlock Text="Lc" Foreground="#ffffff" FontSize="22" FontWeight="SemiBold"
+                                   TextAlignment="Center" VerticalAlignment="Center" Margin="3 0 0 2"/>
+                    </Border>
+
+                    <StackPanel>
+                        <TextBlock Text="Durond" FontSize="15" Margin="0 0 0 5" Foreground="#c2cfff"/>
+                        <TextBlock Text="alpha 1.1" FontSize="11" Foreground="#ffffff"/>
+                    </StackPanel>
+                </StackPanel>
+
+                <Separator Height="17" Margin="20" Background="Gray"/>
+
+            </StackPanel>
+        </Border>
     </Grid>
 </Window>
