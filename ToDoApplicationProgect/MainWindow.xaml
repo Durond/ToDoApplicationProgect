@@ -44,7 +44,7 @@
                 <Separator Height="17" Margin="20" Background="Gray"/>
 
                 <!-- Menu buttons -->
-                <Button  Style="{StaticResource menuButton}">
+                <Button  Style="{StaticResource menuButton}" Click="ShowTask">
                     <StackPanel Orientation="Horizontal">
                         <TextBlock  Text="Task" HorizontalAlignment="Center" Style="{StaticResource menuButtonText}" />
                     </StackPanel>

@@ -31,5 +31,12 @@ namespace ToDoApplicationProgect
             er1.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             er1.ShowDialog();
         }
+
+      
+
+        private void ShowTask(object sender, RoutedEventArgs e)
+        {
+            myFrame.Navigate(new ShowPage.TaskPage());
+        }
     }
 }
