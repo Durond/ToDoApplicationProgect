@@ -22,5 +22,10 @@ namespace ToDoApplicationProgect
         {
             InitializeComponent();
         }
+
+        private void Exit(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

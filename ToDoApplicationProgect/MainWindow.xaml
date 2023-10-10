@@ -6,21 +6,22 @@
         xmlns:local="clr-namespace:ToDoApplicationProgect"
         mc:Ignorable="d"
           Height="740" Width="1080" WindowStartupLocation="CenterScreen" WindowStyle="None"
-        AllowsTransparency="True" Background="Transparent">
+        AllowsTransparency="True" Background="Transparent" ResizeMode="NoResize">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="250"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <Border CornerRadius="10 0 0 10">
+        <!-- left menu -->
+        <Border   CornerRadius="10 0 0 10">
             <Border.Background>
                 <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
-                    <GradientStop Color="#0667b3" Offset="0"/>
-                    <GradientStop Color="#0067b3" Offset="1"/>
+                    <GradientStop Color="#0067B3" Offset="0"/>
+                    <GradientStop Color="#0067B3" Offset="1"/>
                 </LinearGradientBrush>
             </Border.Background>
-            
+
             <StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 35 0 0">
                     <Border CornerRadius="10" Width="40" Height="40">
@@ -31,19 +32,77 @@
                             </LinearGradientBrush>
                         </Border.Background>
 
-                        <TextBlock Text="Lc" Foreground="#ffffff" FontSize="22" FontWeight="SemiBold"
+                        <TextBlock Text="Dn" Foreground="#ffffff" FontSize="22" FontWeight="SemiBold"
                                    TextAlignment="Center" VerticalAlignment="Center" Margin="3 0 0 2"/>
                     </Border>
-
-                    <StackPanel>
-                        <TextBlock Text="Durond" FontSize="15" Margin="0 0 0 5" Foreground="#c2cfff"/>
-                        <TextBlock Text="alpha 1.1" FontSize="11" Foreground="#ffffff"/>
+                    <StackPanel Margin="10 0 0 0" VerticalAlignment="Center">
+                        <TextBlock Text="Durond " FontSize="15" Margin="0 0 0 5" Foreground="#c2cfff" />
+                        <TextBlock Text="alpha 1.1 " FontSize="11"  Foreground="#ffffff" />
                     </StackPanel>
                 </StackPanel>
 
                 <Separator Height="17" Margin="20" Background="Gray"/>
 
+                <!-- Menu buttons -->
+                <Button  Style="{StaticResource menuButton}" Click="BackMainMenu">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock  Text="Task" HorizontalAlignment="Center" Style="{StaticResource menuButtonText}" />
+                    </StackPanel>
+                </Button>
+             
+             
+              
+                <Button  Style="{StaticResource menuButton}">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock  Text="Category" Style="{StaticResource menuButtonText}" />
+                    </StackPanel>
+                </Button>
+                <Button  Style="{StaticResource menuButton}" Click="Exit">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock  Text="Exit" Style="{StaticResource menuButtonText}" />
+                    </StackPanel>
+                </Button>
+
             </StackPanel>
         </Border>
+
+        <!--Main selection-->
+        <Border Grid.Column="1" CornerRadius="0 10 0 0" >
+            <Border.Background>
+                <LinearGradientBrush StartPoint="1,0" EndPoint="0,1">
+                    <GradientStop Color="#4B92C4" Offset="0"/>
+                    <GradientStop Color="#4B92C4" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <!--Top menu-->
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0 0 30 20">
+                </StackPanel>
+                <!--Title-->
+                <TextBlock Text="Good afternoon, User" FontSize="26" Foreground="#ccd7ff" HorizontalAlignment="Right" Margin="0,30,120,24" />
+
+
+                <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0 10 0 0">
+
+
+                </StackPanel>
+
+
+                <!--MessageBoxCustomaze-->
+
+
+
+                <!--#endregion-->
+
+                <Frame Grid.Column="1" x:Name="myFrame" NavigationUIVisibility="Hidden"/>
+            </Grid>
+        </Border>
     </Grid>
+
 </Window>
