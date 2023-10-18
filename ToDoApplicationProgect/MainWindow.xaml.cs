@@ -15,13 +15,21 @@ using ToDoApplicationProgect.CustomErrorWindow;
 
 namespace ToDoApplicationProgect
 {
-   
     public partial class MainWindow : Window
     {
+        private static ToDoListEntities _context;
         public MainWindow()
         {
             InitializeComponent();
         }
+
+        public static ToDoListEntities GetContext()
+        {
+            if (_context == null)
+                _context = new ToDoListEntities();
+            return _context;
+        }
+            
 
         private void Exit(object sender, RoutedEventArgs e)
         {

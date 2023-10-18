@@ -24,103 +24,19 @@
                          Width="200"
                          Margin="30,0,0,0"
                          Style="{StaticResource TextboxStyle}"/>
-
-
-
-
-
-        <DataGrid   Style="{DynamicResource DataGridStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" RowStyle="{DynamicResource DataGridRowStyle1}" Grid.Row="2" x:Name="EmployerDataGrid">
-
-            <DataGrid.Columns>
-                <DataGridCheckBoxColumn CanUserResize="False" Width="auto" ElementStyle="{StaticResource CheckBoxStyle1}">
-                    <DataGridCheckBoxColumn.HeaderTemplate>
-                        <DataTemplate>
-                            <CheckBox Style="{StaticResource CheckBoxStyle1}"/>
-                        </DataTemplate>
-                    </DataGridCheckBoxColumn.HeaderTemplate>
-
-                </DataGridCheckBoxColumn>
-                <DataGridTextColumn Header="#" IsReadOnly="True" CanUserResize="False" Width="auto" Binding="{Binding Tabnum}"/>
-
-
-                <DataGridTemplateColumn IsReadOnly="True" Width="*" >
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <StackPanel Orientation="Horizontal">
-                                <Border Width="25" Height="25" CornerRadius="50" Margin="0 0 10 0"  Background="{Binding BgColor}">
-                                </Border>
-
-                            </StackPanel>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-
-                </DataGridTemplateColumn>
-
-                <DataGridTextColumn Header="ФИО" IsReadOnly="True"  Width="*" Binding="{Binding FIO}"/>
-                <DataGridTextColumn Header="Должность" IsReadOnly="True"  Width="*" Binding="{Binding position}"  />
-                <DataGridTextColumn Header="Цех" IsReadOnly="True"  Width="*"  Binding="{Binding workshop}"  />
-
-                <DataGridTemplateColumn Header="Действия" IsReadOnly="True" Width="auto">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <StackPanel Orientation="Horizontal">
-
-                                <Button Style="{StaticResource gridAddButton}" >
-                                    <StackPanel Orientation="Horizontal">
-                                        <Image Source="/Resources/Add.png" Width="20" Height="30" />
-                                    </StackPanel>
-                                </Button>
-
-                                <Button Style="{StaticResource gridEditButton}" >
-                                    <StackPanel Orientation="Horizontal">
-                                        <Image Source="/Resources/Edit.png" Width="20" Height="30" />
-                                    </StackPanel>
-                                </Button>
-
-                                <Button  Style="{StaticResource gridRemoveButton}">
-                                    <StackPanel Orientation="Horizontal">
-                                        <Image Source="/Resources/basket.png" Width="20" Height="30" />
-                                    </StackPanel>
-                                </Button>
-                            </StackPanel>
-
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-
-                </DataGridTemplateColumn>
-
-            </DataGrid.Columns>
-        </DataGrid>
         <TextBlock Text="Список задач" Grid.Row="0" FontSize="18" FontWeight="SemiBold"
-           Foreground="#FDEAF3" HorizontalAlignment="Center" VerticalAlignment="Center" />
-
-        <Border Grid.Row="3" HorizontalAlignment="Right" BorderBrush="#dee4ec" BorderThickness="1"
-                CornerRadius="5" Padding="3" Background="White" Margin="0 2 2 3">
-            <StackPanel Grid.Row="3" >
-
-                <Button  Style="{StaticResource pagingButton}">
-                    <StackPanel Orientation="Horizontal">
-                        <Rectangle Width="1" Fill="#dee4ec" Margin="3 7"/>
-                        <Button Style="{StaticResource pagingButton}" Content="1"/>
-                        <Button Style="{StaticResource pagingButton}" Content="2"/>
-                        <Button Style="{StaticResource pagingButton}" Content="3"/>
-
-                        <TextBlock Text="..." Foreground="Black" VerticalAlignment="Center" FontSize="15" Margin="10 0"/>
-
-                        <Button Style="{StaticResource pagingButton}" Content="7" />
-                        <Button Style="{StaticResource pagingButton}" Content="8" />
-                        <Button Style="{StaticResource pagingButton}" Content="9" />
-
-                        <Rectangle Width="1" Fill="#dee4ec" Margin="3 7"/>
-
-                        <Button  Style="{StaticResource pagingButton}" >
-                            <StackPanel Orientation="Horizontal">
-                            </StackPanel>
-                        </Button>
-                    </StackPanel>
-                </Button>
-            </StackPanel>
-        </Border>
-        <Frame HorizontalAlignment="Center" x:Name="myFrame" NavigationUIVisibility="Hidden"/>
-    </Grid>
+        Foreground="#FDEAF3" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        <DataGrid Grid.Row="2"  x:Name="DataGridTask" AutoGenerateColumns="False" Margin="0,45,0,10" Grid.RowSpan="2"  >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="#" Binding="{Binding id}" Width="25"/>
+                <DataGridTextColumn Header="Название" Binding="{Binding title}" Width="100"/>
+                <DataGridTextColumn Header="описание" Binding="{Binding description}" Width="170"/>
+                <DataGridTextColumn Header="приоритет" Binding="{Binding priority}" Width="70"/>
+                <DataGridTextColumn Header="Дата завершения" Binding="{Binding due_date}" Width="*"/>
+                <DataGridTextColumn Header="Статус" Binding="{Binding status}" Width="70" />
+                <DataGridTextColumn Header="Дата создания" Binding="{Binding created_at}" Width="140"/>
+                <DataGridTextColumn Header="Пользователь" Binding="{Binding user_id}" Width="*"/>
+            </DataGrid.Columns>
+       </DataGrid>
+       </Grid>
 </Page>
