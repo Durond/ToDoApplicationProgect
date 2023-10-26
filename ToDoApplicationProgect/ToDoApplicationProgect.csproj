@@ -145,6 +145,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddPage\AddTaskPage.xaml.cs">
+      <DependentUpon>AddTaskPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Categories.cs">
       <DependentUpon>ToDoModel.tt</DependentUpon>
     </Compile>
@@ -181,6 +184,10 @@
     <Compile Include="Users.cs">
       <DependentUpon>ToDoModel.tt</DependentUpon>
     </Compile>
+    <Page Include="AddPage\AddTaskPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="CustomErrorWindow\Exitbox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
