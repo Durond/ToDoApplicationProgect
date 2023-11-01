@@ -17,16 +17,16 @@ namespace ToDoApplicationProgect
 {
     public partial class MainWindow : Window
     {
-        private static ToDoListEntities _context;
+        private static ToDoListEntities1 _context;
         public MainWindow()
         {
             InitializeComponent();
         }
 
-        public static ToDoListEntities GetContext()
+        public static ToDoListEntities1 GetContext()
         {
             if (_context == null)
-                _context = new ToDoListEntities();
+                _context = new ToDoListEntities1();
             return _context;
         }
             

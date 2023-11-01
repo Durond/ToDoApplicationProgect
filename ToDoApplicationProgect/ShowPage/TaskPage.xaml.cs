@@ -20,11 +20,11 @@ namespace ToDoApplicationProgect.ShowPage
     /// </summary>
     public partial class TaskPage : Page
     {
-        ToDoListEntities context;
+        ToDoListEntities1 context;
         public TaskPage()
         {
             InitializeComponent();
-            context = new ToDoListEntities();
+            context = new ToDoListEntities1();
             DataGridTask.ItemsSource = context.Tasks.ToList();
         }
     }
