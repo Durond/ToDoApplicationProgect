@@ -25,14 +25,46 @@ namespace ToDoApplicationProgect
         public string description { get; set; }
         public int priority { get; set; }
         public System.DateTime due_date { get; set; }
+    
+       
         public int status { get; set; }
         public System.DateTime created_at { get; set; }
         public int user_id { get; set; }
     
         public virtual Priority Priority1 { get; set; }
+
+        public string Statustitle { 
+            get
+            {
+                if (status.ToString() == null)
+                    return "";
+                else return Status1.status1;
+            } 
+        }
+        
+        public string Prioritytitle
+        {
+            get
+            {
+                if (priority.ToString() == null)
+                    return "";
+                else return Priority1.priority1;
+            }
+        }
+        public string UserName
+        {
+            get
+            {
+                if (user_id.ToString() == null)
+                    return "";
+                else return Users.name;
+            }
+        }
+
         public virtual Status Status1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TaskCategory> TaskCategory { get; set; }
         public virtual Users Users { get; set; }
+        
     }
 }

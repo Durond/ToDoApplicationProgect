@@ -29,13 +29,14 @@
         <DataGrid Grid.Row="2"  x:Name="DataGridTask" AutoGenerateColumns="False" Margin="0,45,0,10" Grid.RowSpan="2"  >
             <DataGrid.Columns>
                 <DataGridTextColumn Header="#" Binding="{Binding id}" Width="25"/>
+                <DataGridTextColumn Header="Пользователь" Binding="{Binding UserName}" Width="*"/>
                 <DataGridTextColumn Header="Название" Binding="{Binding title}" Width="100"/>
                 <DataGridTextColumn Header="описание" Binding="{Binding description}" Width="170"/>
-                <DataGridTextColumn Header="приоритет" Binding="{Binding priority}" Width="70"/>
+                <DataGridTextColumn Header="приоритет" Binding="{Binding Prioritytitle}" Width="70"/>
                 <DataGridTextColumn Header="Дата завершения" Binding="{Binding due_date}" Width="*"/>
-                <DataGridTextColumn Header="Статус" Binding="{Binding status}" Width="70" />
+                <DataGridTextColumn Header="Статус" Binding="{Binding Statustitle}" Width="70" />
                 <DataGridTextColumn Header="Дата создания" Binding="{Binding created_at}" Width="140"/>
-                <DataGridTextColumn Header="Пользователь" Binding="{Binding user_id}" Width="*"/>
+              
             </DataGrid.Columns>
        </DataGrid>
        </Grid>
