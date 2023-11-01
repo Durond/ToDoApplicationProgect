@@ -13,10 +13,10 @@ namespace ToDoApplicationProgect
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class ToDoListEntities : DbContext
+    public partial class ToDoListEntities1 : DbContext
     {
-        public ToDoListEntities()
-            : base("name=ToDoListEntities")
+        public ToDoListEntities1()
+            : base("name=ToDoListEntities1")
         {
         }
     
@@ -24,13 +24,10 @@ namespace ToDoApplicationProgect
         {
             throw new UnintentionalCodeFirstException();
         }
-
-        internal static object GetContext()
-        {
-            throw new NotImplementedException();
-        }
-
+    
         public virtual DbSet<Categories> Categories { get; set; }
+        public virtual DbSet<Priority> Priority { get; set; }
+        public virtual DbSet<Status> Status { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<TaskCategory> TaskCategory { get; set; }
         public virtual DbSet<Tasks> Tasks { get; set; }

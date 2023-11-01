@@ -12,27 +12,18 @@ namespace ToDoApplicationProgect
     using System;
     using System.Collections.Generic;
     
-    public partial class Tasks
+    public partial class Priority
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Tasks()
+        public Priority()
         {
-            this.TaskCategory = new HashSet<TaskCategory>();
+            this.Tasks = new HashSet<Tasks>();
         }
     
-        public int id { get; set; }
-        public string title { get; set; }
-        public string description { get; set; }
-        public int priority { get; set; }
-        public System.DateTime due_date { get; set; }
-        public int status { get; set; }
-        public System.DateTime created_at { get; set; }
-        public int user_id { get; set; }
+        public int priorityId { get; set; }
+        public string priority1 { get; set; }
     
-        public virtual Priority Priority1 { get; set; }
-        public virtual Status Status1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TaskCategory> TaskCategory { get; set; }
-        public virtual Users Users { get; set; }
+        public virtual ICollection<Tasks> Tasks { get; set; }
     }
 }

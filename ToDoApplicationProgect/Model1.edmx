@@ -13,6 +13,20 @@
           <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="user_id" Type="int" Nullable="false" />
         </EntityType>
+        <EntityType Name="Priority">
+          <Key>
+            <PropertyRef Name="priorityId" />
+          </Key>
+          <Property Name="priorityId" Type="int" Nullable="false" />
+          <Property Name="priority" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Status">
+          <Key>
+            <PropertyRef Name="statusid" />
+          </Key>
+          <Property Name="statusid" Type="int" Nullable="false" />
+          <Property Name="status" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
             <PropertyRef Name="diagram_id" />
@@ -88,6 +102,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Tasks_Priority">
+          <End Role="Priority" Type="Self.Priority" Multiplicity="1" />
+          <End Role="Tasks" Type="Self.Tasks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Priority">
+              <PropertyRef Name="priorityId" />
+            </Principal>
+            <Dependent Role="Tasks">
+              <PropertyRef Name="priority" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tasks_Status">
+          <End Role="Status" Type="Self.Status" Multiplicity="1" />
+          <End Role="Tasks" Type="Self.Tasks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Status">
+              <PropertyRef Name="statusid" />
+            </Principal>
+            <Dependent Role="Tasks">
+              <PropertyRef Name="status" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Tasks_Users">
           <End Role="Users" Type="Self.Users" Multiplicity="1" />
           <End Role="Tasks" Type="Self.Tasks" Multiplicity="*" />
@@ -102,6 +140,8 @@
         </Association>
         <EntityContainer Name="Хранилище ToDoListModelContainer">
           <EntitySet Name="Categories" EntityType="Self.Categories" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Priority" EntityType="Self.Priority" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Status" EntityType="Self.Status" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TaskCategory" EntityType="Self.TaskCategory" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tasks" EntityType="Self.Tasks" Schema="dbo" store:Type="Tables" />
@@ -117,6 +157,14 @@
           <AssociationSet Name="FK_TaskCategory_Tasks" Association="Self.FK_TaskCategory_Tasks">
             <End Role="Tasks" EntitySet="Tasks" />
             <End Role="TaskCategory" EntitySet="TaskCategory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tasks_Priority" Association="Self.FK_Tasks_Priority">
+            <End Role="Priority" EntitySet="Priority" />
+            <End Role="Tasks" EntitySet="Tasks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tasks_Status" Association="Self.FK_Tasks_Status">
+            <End Role="Status" EntitySet="Status" />
+            <End Role="Tasks" EntitySet="Tasks" />
           </AssociationSet>
           <AssociationSet Name="FK_Tasks_Users" Association="Self.FK_Tasks_Users">
             <End Role="Users" EntitySet="Users" />
@@ -137,6 +185,22 @@
           <Property Name="user_id" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Users" Relationship="Self.FK_Categories_Users" FromRole="Categories" ToRole="Users" />
           <NavigationProperty Name="TaskCategory" Relationship="Self.FK_TaskCategory_Categories" FromRole="Categories" ToRole="TaskCategory" />
+        </EntityType>
+        <EntityType Name="Priority">
+          <Key>
+            <PropertyRef Name="priorityId" />
+          </Key>
+          <Property Name="priorityId" Type="Int32" Nullable="false" />
+          <Property Name="priority1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Tasks" Relationship="Self.FK_Tasks_Priority" FromRole="Priority" ToRole="Tasks" />
+        </EntityType>
+        <EntityType Name="Status">
+          <Key>
+            <PropertyRef Name="statusid" />
+          </Key>
+          <Property Name="statusid" Type="Int32" Nullable="false" />
+          <Property Name="status1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Tasks" Relationship="Self.FK_Tasks_Status" FromRole="Status" ToRole="Tasks" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -170,6 +234,8 @@
           <Property Name="status" Type="Int32" Nullable="false" />
           <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="user_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Priority1" Relationship="Self.FK_Tasks_Priority" FromRole="Tasks" ToRole="Priority" />
+          <NavigationProperty Name="Status1" Relationship="Self.FK_Tasks_Status" FromRole="Tasks" ToRole="Status" />
           <NavigationProperty Name="TaskCategory" Relationship="Self.FK_TaskCategory_Tasks" FromRole="Tasks" ToRole="TaskCategory" />
           <NavigationProperty Name="Users" Relationship="Self.FK_Tasks_Users" FromRole="Tasks" ToRole="Users" />
         </EntityType>
@@ -207,6 +273,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Tasks_Priority">
+          <End Role="Priority" Type="Self.Priority" Multiplicity="1" />
+          <End Role="Tasks" Type="Self.Tasks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Priority">
+              <PropertyRef Name="priorityId" />
+            </Principal>
+            <Dependent Role="Tasks">
+              <PropertyRef Name="priority" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tasks_Status">
+          <End Role="Status" Type="Self.Status" Multiplicity="1" />
+          <End Role="Tasks" Type="Self.Tasks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Status">
+              <PropertyRef Name="statusid" />
+            </Principal>
+            <Dependent Role="Tasks">
+              <PropertyRef Name="status" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_TaskCategory_Tasks">
           <End Role="Tasks" Type="Self.Tasks" Multiplicity="1" />
           <End Role="TaskCategory" Type="Self.TaskCategory" Multiplicity="*" />
@@ -231,8 +321,10 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="ToDoListEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="ToDoListEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Categories" EntityType="Self.Categories" />
+          <EntitySet Name="Priority" EntityType="Self.Priority" />
+          <EntitySet Name="Status" EntityType="Self.Status" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="TaskCategory" EntityType="Self.TaskCategory" />
           <EntitySet Name="Tasks" EntityType="Self.Tasks" />
@@ -244,6 +336,14 @@
           <AssociationSet Name="FK_TaskCategory_Categories" Association="Self.FK_TaskCategory_Categories">
             <End Role="Categories" EntitySet="Categories" />
             <End Role="TaskCategory" EntitySet="TaskCategory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tasks_Priority" Association="Self.FK_Tasks_Priority">
+            <End Role="Priority" EntitySet="Priority" />
+            <End Role="Tasks" EntitySet="Tasks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tasks_Status" Association="Self.FK_Tasks_Status">
+            <End Role="Status" EntitySet="Status" />
+            <End Role="Tasks" EntitySet="Tasks" />
           </AssociationSet>
           <AssociationSet Name="FK_TaskCategory_Tasks" Association="Self.FK_TaskCategory_Tasks">
             <End Role="Tasks" EntitySet="Tasks" />
@@ -259,13 +359,29 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище ToDoListModelContainer" CdmEntityContainer="ToDoListEntities">
+        <EntityContainerMapping StorageEntityContainer="Хранилище ToDoListModelContainer" CdmEntityContainer="ToDoListEntities1">
           <EntitySetMapping Name="Categories">
             <EntityTypeMapping TypeName="ToDoListModel.Categories">
               <MappingFragment StoreEntitySet="Categories">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="user_id" ColumnName="user_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Priority">
+            <EntityTypeMapping TypeName="ToDoListModel.Priority">
+              <MappingFragment StoreEntitySet="Priority">
+                <ScalarProperty Name="priorityId" ColumnName="priorityId" />
+                <ScalarProperty Name="priority1" ColumnName="priority" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Status">
+            <EntityTypeMapping TypeName="ToDoListModel.Status">
+              <MappingFragment StoreEntitySet="Status">
+                <ScalarProperty Name="statusid" ColumnName="statusid" />
+                <ScalarProperty Name="status1" ColumnName="status" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
