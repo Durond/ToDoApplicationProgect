@@ -51,5 +51,15 @@ namespace ToDoApplicationProgect
         {
             myFrame.Navigate(new ShowPage.CategoryPage());
         }
+
+        private void ShowPriority(object sender, RoutedEventArgs e)
+        {
+            myFrame.Navigate(new ShowPage.PriorityPage());
+        }
+
+        private void ShowStatus(object sender, RoutedEventArgs e)
+        {
+            myFrame.Navigate(new ShowPage.StatusPage());
+        }
     }
 }

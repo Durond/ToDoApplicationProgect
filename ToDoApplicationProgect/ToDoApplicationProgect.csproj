@@ -172,6 +172,12 @@
     <Compile Include="ShowPage\CategoryPage.xaml.cs">
       <DependentUpon>CategoryPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ShowPage\PriorityPage.xaml.cs">
+      <DependentUpon>PriorityPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ShowPage\StatusPage.xaml.cs">
+      <DependentUpon>StatusPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ShowPage\TaskPage.xaml.cs">
       <DependentUpon>TaskPage.xaml</DependentUpon>
     </Compile>
@@ -214,6 +220,14 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="ShowPage\CategoryPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ShowPage\PriorityPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ShowPage\StatusPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

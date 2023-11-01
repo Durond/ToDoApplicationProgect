@@ -57,11 +57,27 @@
                         <TextBlock  Text="Category" Style="{StaticResource menuButtonText}" />
                     </StackPanel>
                 </Button>
+
+
+                <Button  Style="{StaticResource menuButton}" Click="ShowPriority">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock  Text="Priority" HorizontalAlignment="Center" Style="{StaticResource menuButtonText}" />
+                    </StackPanel>
+                </Button>
+
+
+                <Button  Style="{StaticResource menuButton}" Click="ShowStatus">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock  Text="Status" HorizontalAlignment="Center" Style="{StaticResource menuButtonText}" />
+                    </StackPanel>
+                </Button>
                 <Button  Style="{StaticResource menuButton}" Click="Exit">
                     <StackPanel Orientation="Horizontal">
                         <TextBlock  Text="Exit" Style="{StaticResource menuButtonText}" />
                     </StackPanel>
                 </Button>
+
+               
 
             </StackPanel>
         </Border>
