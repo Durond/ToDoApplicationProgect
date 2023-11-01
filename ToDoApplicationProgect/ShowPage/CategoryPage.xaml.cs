@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -20,9 +21,12 @@ namespace ToDoApplicationProgect.ShowPage
     /// </summary>
     public partial class CategoryPage : Page
     {
+        ToDoListEntities1 context;
         public CategoryPage()
         {
             InitializeComponent();
+            context = new ToDoListEntities1();
+            DataGridTask.ItemsSource = context.Categories.ToList();
         }
     }
 }
