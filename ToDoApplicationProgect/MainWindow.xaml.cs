@@ -10,7 +10,9 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ToDoApplicationProgect.AddPage;
 using ToDoApplicationProgect.CustomErrorWindow;
 
 namespace ToDoApplicationProgect
@@ -49,6 +51,7 @@ namespace ToDoApplicationProgect
 
         private void Category_Click(object sender, RoutedEventArgs e)
         {
+           
             myFrame.Navigate(new ShowPage.CategoryPage());
         }
 

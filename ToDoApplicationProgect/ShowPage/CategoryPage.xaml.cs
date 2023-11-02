@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ToDoApplicationProgect.AddPage;
 
 namespace ToDoApplicationProgect.ShowPage
 {
@@ -26,7 +27,7 @@ namespace ToDoApplicationProgect.ShowPage
         {
             InitializeComponent();
             context = new ToDoListEntities1();
-            DataGridTask.ItemsSource = context.Categories.ToList();
+            CategoryTable.ItemsSource = context.Categories.ToList();
         }
 
         private void EditCategory(object sender, RoutedEventArgs e)
@@ -41,7 +42,10 @@ namespace ToDoApplicationProgect.ShowPage
 
         private void CreateCategory(object sender, RoutedEventArgs e)
         {
-            myFrame.Navigate(new AddPage.AddCategoryPage());
+            
+            NavigationService.Navigate(new AddCategoryPage(context));
+            //NavigationService.Navigate(new AddCategoryPage(context,categories));
+            //  myFrame.Navigate(new AddPage.AddCategoryPage());
         }
     }
 }

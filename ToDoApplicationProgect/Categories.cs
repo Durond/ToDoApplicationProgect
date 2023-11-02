@@ -23,7 +23,17 @@ namespace ToDoApplicationProgect
         public int id { get; set; }
         public string name { get; set; }
         public int user_id { get; set; }
-    
+        public string UserName
+        {
+            get
+            {
+                if (Users.ToString() == null)
+                    return "";
+                else return Users.name;
+            }
+        }
+
+
         public virtual Users Users { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TaskCategory> TaskCategory { get; set; }

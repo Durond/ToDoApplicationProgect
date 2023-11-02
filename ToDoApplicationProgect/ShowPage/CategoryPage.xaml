@@ -22,9 +22,10 @@
         </Grid.RowDefinitions>
         <TextBlock Text="Категория задачи" Grid.Row="0" FontSize="18" FontWeight="SemiBold"
          Foreground="#FDEAF3" HorizontalAlignment="Center" VerticalAlignment="Center" />
-        <DataGrid Grid.Row="2"  x:Name="DataGridTask" AutoGenerateColumns="False" Margin="0,45,0,10" Grid.RowSpan="2"  >
+        <DataGrid Grid.Row="2"  x:Name="CategoryTable" AutoGenerateColumns="False" Margin="0,45,0,10" Grid.RowSpan="2"  >
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Пользователь" Binding="{Binding user_id}" Width="*"/>
+                <DataGridTextColumn Header="Номер категории" Binding="{Binding id}" Width="*"/>
+                <DataGridTextColumn Header="Пользователь" Binding="{Binding UserName}" Width="*"/>
                 <DataGridTextColumn Header="Категория" Binding="{Binding name}" Width="*"/>
     
             </DataGrid.Columns>
