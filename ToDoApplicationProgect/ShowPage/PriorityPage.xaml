@@ -21,7 +21,8 @@
             <RowDefinition Height="300"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-
+        <TextBlock Text="Приоритет задачи" Grid.Row="0" FontSize="18" FontWeight="SemiBold"
+        Foreground="#FDEAF3" HorizontalAlignment="Center" VerticalAlignment="Center" />
         <DataGrid Grid.Row="2"  x:Name="DataGridPriority" AutoGenerateColumns="False" Margin="0,45,0,10" Grid.RowSpan="2"  >
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Номер" Binding="{Binding priorityId}" Width="*"/>

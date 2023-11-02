@@ -28,5 +28,20 @@ namespace ToDoApplicationProgect.ShowPage
             context = new ToDoListEntities1();
             DataGridTask.ItemsSource = context.Categories.ToList();
         }
+
+        private void EditCategory(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DeleteCategory(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void CreateCategory(object sender, RoutedEventArgs e)
+        {
+            myFrame.Navigate(new AddPage.AddCategoryPage());
+        }
     }
 }

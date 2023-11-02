@@ -8,8 +8,9 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="CategoryPage" Background="#ff009fda">
 
-
-    <Grid>
+  
+    <Grid >
+      
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
@@ -19,13 +20,25 @@
             <RowDefinition Height="300"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-
+        <TextBlock Text="Категория задачи" Grid.Row="0" FontSize="18" FontWeight="SemiBold"
+         Foreground="#FDEAF3" HorizontalAlignment="Center" VerticalAlignment="Center" />
         <DataGrid Grid.Row="2"  x:Name="DataGridTask" AutoGenerateColumns="False" Margin="0,45,0,10" Grid.RowSpan="2"  >
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Пользователь" Binding="{Binding user_id}" Width="*"/>
                 <DataGridTextColumn Header="Категория" Binding="{Binding name}" Width="*"/>
     
             </DataGrid.Columns>
+            <DataGrid.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Создание записи" Click="CreateCategory" />
+                    <MenuItem Header="Редактирование записи" Click="EditCategory"/>
+                    <MenuItem Header="Удалить запись" Click="DeleteCategory"/>  
+                    
+                </ContextMenu>
+                </DataGrid.ContextMenu>
         </DataGrid>
+
+
+        <Frame Grid.Column="1" x:Name="myFrame" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Page>
