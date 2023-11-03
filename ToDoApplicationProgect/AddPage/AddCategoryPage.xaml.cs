@@ -26,8 +26,12 @@ namespace ToDoApplicationProgect.AddPage
         {
             InitializeComponent();
             context = cont;
+             flag = true;
 
         }
+
+        bool flag;
+
 
         private void AddCategory(object sender, RoutedEventArgs e)
         {
@@ -42,6 +46,8 @@ namespace ToDoApplicationProgect.AddPage
             NavigationService.Navigate(new ShowPage.CategoryPage());
 
         }
+
+
         private void BackCategory(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new ShowPage.CategoryPage());

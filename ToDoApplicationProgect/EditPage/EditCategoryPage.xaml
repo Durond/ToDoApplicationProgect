@@ -1,0 +1,49 @@
+﻿<Page x:Class="ToDoApplicationProgect.EditPage.EditCategoryPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ToDoApplicationProgect.EditPage"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="EditCategoryPage"   Background="#ff009fda">
+
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+
+        </Grid.RowDefinitions>
+
+        <StackPanel>
+            <Border Width="850" Height="30" Background="#3399ff" VerticalAlignment="Center" >
+                <Label Content="Окно изменения категории" Foreground="White" Margin="314,0,338,-14"/>
+            </Border>
+        </StackPanel>
+
+        <StackPanel  Grid.Row="1" Margin="0,29,0,87" HorizontalAlignment="Center" Width="240">
+            <Label Content="Номер категории" HorizontalAlignment="Center" Foreground="White"/>
+            <TextBox Name="NumberTextbox" Width="200" Height="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <Label Content="категория" HorizontalAlignment="Center" Foreground="white"/>
+            <TextBox Name="CategoryTextBox" Width="200" Height="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <Label Content="Пользователь" HorizontalAlignment="Center" Foreground="white"/>
+            <TextBox x:Name="UserTextBox" Width="200" Height="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <!--<Button Content="Сохранить" Margin="20" Width="90" Height="33" Style="{DynamicResource AddButtonStyle }" Click="EditCategory"  />-->
+            <Button Content="Назад" Width="90" Height="33" Style="{DynamicResource AddButtonStyle}" Click="BackCategory"/>
+
+        </StackPanel>
+        <Border VerticalAlignment="Top" Background="#3399FF" Width="800" Height="37" Margin="0,390,0,0" Grid.Row="1"    ></Border>
+        <Border HorizontalAlignment="Left" Width="30" Background="#3399ff" Grid.RowSpan="2"  />
+        <Border HorizontalAlignment="Right" Width="30" Background="#3399ff" Grid.RowSpan="2"/>
+
+
+        <Frame Grid.Column="1" x:Name="myFrame" NavigationUIVisibility="Hidden"/>
+
+
+  
+
+   
+        
+    </Grid>
+</Page>

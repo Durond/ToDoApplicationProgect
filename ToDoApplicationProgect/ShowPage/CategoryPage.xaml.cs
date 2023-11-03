@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using ToDoApplicationProgect.AddPage;
+using ToDoApplicationProgect.EditPage;
 
 namespace ToDoApplicationProgect.ShowPage
 {
@@ -32,13 +33,28 @@ namespace ToDoApplicationProgect.ShowPage
 
         private void EditCategory(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new EditCategoryPage(context));
         }
 
         private void DeleteCategory(object sender, RoutedEventArgs e)
         {
-
+            MessageBoxResult res = MessageBox.Show("Вы уверены что хотите удалить данную категорию?", "Подтверждение", MessageBoxButton.YesNo);
+            if (res == MessageBoxResult.Yes)
+            {
+                try
+                {
+                    Categories categories = CategoryTable.SelectedItem as Categories;
+                    context.Categories.Remove(categories);
+                    context.SaveChanges();
+                    NavigationService.Navigate(new CategoryPage());
+                }
+                catch
+                {
+                    MessageBox.Show("Ошибка", "Удаление данной категории удалит категорию из всего приложения");
+                }
+            }
         }
+
 
         private void CreateCategory(object sender, RoutedEventArgs e)
         {
