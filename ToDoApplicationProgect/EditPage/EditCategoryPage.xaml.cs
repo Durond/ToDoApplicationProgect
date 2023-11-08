@@ -26,6 +26,7 @@ namespace ToDoApplicationProgect.EditPage
             InitializeComponent();
             context = cont;
             UserTextBox.ItemsSource = context.Users.ToList();
+            
         }
 
 
@@ -35,18 +36,12 @@ namespace ToDoApplicationProgect.EditPage
         }
 
 
-       
+
+    
 
         private void EditCategory(object sender, RoutedEventArgs e)
         {
-          
-            //NumberTextbox.Text = categories.id.ToString();
-            //CategoryTextBox.Text = categories.name;
-            //UserTextBox.SelectedItem = categories.Users;
-            //context.SaveChanges();
-            //NavigationService.Navigate(new ShowPage.CategoryPage()); 
-        }
 
-     
+        }
     }
 }
