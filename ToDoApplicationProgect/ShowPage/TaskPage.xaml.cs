@@ -27,5 +27,29 @@ namespace ToDoApplicationProgect.ShowPage
             context = new ToDoListEntities1();
             DataGridTask.ItemsSource = context.Tasks.ToList();
         }
+
+        private void CreateTask(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new AddPage.AddTaskPage(context));
+        }
+
+        private void DeleteTask(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult res = MessageBox.Show("Вы уверены что хотите удалить данную задачу?", "Подтверждение", MessageBoxButton.YesNo);
+            if(res == MessageBoxResult.Yes)
+            {
+                try
+                {
+                    Tasks tasks = DataGridTask.SelectedItem as Tasks;
+                    context.Tasks.Remove(tasks);
+                    context.SaveChanges();
+                    NavigationService.Navigate(new TaskPage());
+                }
+                catch
+                {
+                    MessageBox.Show("Ошибка", "Данную задачу нельзя удалить");
+                }
+            }
+        }
     }
 }

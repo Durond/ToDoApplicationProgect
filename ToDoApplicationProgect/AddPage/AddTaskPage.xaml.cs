@@ -20,9 +20,35 @@ namespace ToDoApplicationProgect.AddPage
     /// </summary>
     public partial class AddTaskPage : Page
     {
-        public AddTaskPage()
+        ToDoListEntities1 context;
+        public AddTaskPage(ToDoListEntities1 cont)
         {
             InitializeComponent();
+            context = cont;
+        }
+
+        private void AddTask(object sender, RoutedEventArgs e)
+        {
+             Tasks tasks = new Tasks
+            {
+                 id = Convert.ToInt32(taskIdTextbox.Text),
+                 title = TaskNameTextbox.Text,
+                 description=DescriptionTextBox.Text,
+                 priority =Convert.ToInt32(TaskPriorityTextbox.Text),
+                 due_date = Convert.ToDateTime(DatastarttaskTextbox.Text),
+                 status = Convert.ToInt32(TaskStatusTextBox.Text),
+                 created_at =Convert.ToDateTime(DatataskcreateTextBox.Text),
+                 user_id=Convert.ToInt32(UserIdTextBox.Text)
+            };
+            context.Tasks.Add(tasks);
+            context.SaveChanges();
+            NavigationService.Navigate(new ShowPage.TaskPage());
+
+        }
+
+        private void BackTask(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new ShowPage.TaskPage());
         }
     }
 }

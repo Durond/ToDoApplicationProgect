@@ -36,8 +36,15 @@
                 <DataGridTextColumn Header="Дата завершения" Binding="{Binding due_date}" Width="*"/>
                 <DataGridTextColumn Header="Статус" Binding="{Binding Statustitle}" Width="70" />
                 <DataGridTextColumn Header="Дата создания" Binding="{Binding created_at}" Width="140"/>
-              
             </DataGrid.Columns>
-       </DataGrid>
+            <DataGrid.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Создание задачи" Click="CreateTask" />
+                    <MenuItem Header="Редактирование задачи" />
+                    <MenuItem Header="Удаление задачи" Click="DeleteTask"/>
+
+                </ContextMenu>
+            </DataGrid.ContextMenu>
+        </DataGrid>
        </Grid>
 </Page>
