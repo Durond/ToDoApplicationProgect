@@ -31,6 +31,14 @@
                 <DataGridTextColumn Header="Статус задачи" Binding="{Binding status1}" Width="*"/>
 
             </DataGrid.Columns>
+            <DataGrid.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Создание статуса" Click="CreateStatus" />
+                    <MenuItem Header="Редактирование статуса" />
+                    <MenuItem Header="Удаление записи" Click="DeleteStatus"/>
+
+                </ContextMenu>
+            </DataGrid.ContextMenu>
         </DataGrid>
     </Grid>
 </Page>

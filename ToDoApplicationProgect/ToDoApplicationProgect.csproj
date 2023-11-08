@@ -151,6 +151,9 @@
     <Compile Include="AddPage\AddPriorityPage.xaml.cs">
       <DependentUpon>AddPriorityPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AddPage\AddStatusPage.xaml.cs">
+      <DependentUpon>AddStatusPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AddPage\AddTaskPage.xaml.cs">
       <DependentUpon>AddTaskPage.xaml</DependentUpon>
     </Compile>
@@ -210,6 +213,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AddPage\AddPriorityPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddPage\AddStatusPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

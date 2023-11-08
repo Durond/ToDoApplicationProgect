@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ToDoApplicationProgect.AddPage;
 
 namespace ToDoApplicationProgect.ShowPage
 {
@@ -27,5 +28,32 @@ namespace ToDoApplicationProgect.ShowPage
             context = new ToDoListEntities1();
             DataGridStatus.ItemsSource = context.Status.ToList();
         }
+
+        private void CreateStatus(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new AddStatusPage(context));
+        }
+
+        private void DeleteStatus(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult res = MessageBox.Show("Вы уверены что хотите удалить данный статус?", "Подтверждение", MessageBoxButton.YesNo);
+                if (res == MessageBoxResult.Yes)
+            {
+                try
+                {
+                    Status status = DataGridStatus.SelectedItem as Status;
+                    context.Status.Remove(status);
+                    context.SaveChanges();
+                    NavigationService.Navigate(new StatusPage());
+                }
+                catch
+                {
+                    MessageBox.Show("Ошибка", "Удаление данного Статуса затронет существующие связи");
+                }
+            }    
+               
+        }
+
+  
     }
 }
