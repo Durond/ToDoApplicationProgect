@@ -26,11 +26,11 @@ namespace ToDoApplicationProgect.AddPage
         {
             InitializeComponent();
             context = cont;
-             flag = true;
+            
 
         }
 
-        bool flag;
+       
 
 
         private void AddCategory(object sender, RoutedEventArgs e)

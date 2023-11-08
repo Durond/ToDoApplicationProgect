@@ -29,6 +29,14 @@
                 <DataGridTextColumn Header="Приоритет задачи" Binding="{Binding priority1}" Width="*"/>
 
             </DataGrid.Columns>
+            <DataGrid.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Создание приоритета" Click="CreatePriority" />
+                    <MenuItem Header="Редактирование записи" Click="EditPriority"/>
+                    <MenuItem Header="Удалить запись" Click="DeletePriority"/>
+
+                </ContextMenu>
+            </DataGrid.ContextMenu>
         </DataGrid>
     </Grid>
 </Page>

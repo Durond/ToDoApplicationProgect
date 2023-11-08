@@ -33,7 +33,8 @@ namespace ToDoApplicationProgect.ShowPage
 
         private void EditCategory(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new EditCategoryPage(context));
+            Categories categories = CategoryTable.SelectedItem as Categories;
+            NavigationService.Navigate(new EditCategoryPage(context, categories));
         }
 
         private void DeleteCategory(object sender, RoutedEventArgs e)
@@ -60,8 +61,7 @@ namespace ToDoApplicationProgect.ShowPage
         {
             
             NavigationService.Navigate(new AddCategoryPage(context));
-            //NavigationService.Navigate(new AddCategoryPage(context,categories));
-            //  myFrame.Navigate(new AddPage.AddCategoryPage());
+           
         }
     }
 }

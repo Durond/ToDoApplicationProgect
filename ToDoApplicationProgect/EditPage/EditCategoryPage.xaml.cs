@@ -21,10 +21,11 @@ namespace ToDoApplicationProgect.EditPage
     public partial class EditCategoryPage : Page
     {
         ToDoListEntities1 context;
-        public EditCategoryPage(ToDoListEntities1 cont)
+        public EditCategoryPage(ToDoListEntities1 cont, Categories categories)
         {
             InitializeComponent();
             context = cont;
+            UserTextBox.ItemsSource = context.Users.ToList();
         }
 
 
@@ -33,11 +34,19 @@ namespace ToDoApplicationProgect.EditPage
             NavigationService.Navigate(new ShowPage.CategoryPage()); 
         }
 
-        //private void EditCategory(ToDoListEntities1 cont, Categories categories)
-        //{
-        //    NumberTextbox.Text = categories.id.ToString();
 
-        //}
+       
 
+        private void EditCategory(object sender, RoutedEventArgs e)
+        {
+          
+            //NumberTextbox.Text = categories.id.ToString();
+            //CategoryTextBox.Text = categories.name;
+            //UserTextBox.SelectedItem = categories.Users;
+            //context.SaveChanges();
+            //NavigationService.Navigate(new ShowPage.CategoryPage()); 
+        }
+
+     
     }
 }
