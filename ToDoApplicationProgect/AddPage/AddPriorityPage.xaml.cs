@@ -36,6 +36,7 @@ namespace ToDoApplicationProgect.AddPage
             };
            context.Priority.Add(priority);
            context.SaveChanges();
+            MessageBox.Show("Приоритет добавлен", "Успешно", MessageBoxButton.OK);
             NavigationService.Navigate(new ShowPage.PriorityPage());
         }
 

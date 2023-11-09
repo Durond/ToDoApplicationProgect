@@ -1,0 +1,26 @@
+﻿<Window x:Class="ToDoApplicationProgect.CustomErrorWindow.Successwindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ToDoApplicationProgect.CustomErrorWindow"
+        mc:Ignorable="d"
+         Title="Завершение работы" Background="#4F86F7" ResizeMode="NoResize" WindowStyle="None" Width="350">
+    <Grid>
+       
+        <Grid>
+
+            <Label Content="Запись успешно добавлена" Foreground="White" Margin="64,27,52,76"/>
+            <Border Background="#3399FF" Height="25" VerticalAlignment="Top" Width="350">
+                <Label Content="Успех" Foreground="White" Margin="0,0,102,-6" />
+            </Border>
+
+            <Button Style="{StaticResource MessageBoxButton}" Margin="117,65,143,35" Foreground="White" Click="Click_Exit">ОК</Button>
+
+
+
+
+        </Grid>
+
+    </Grid>
+</Window>

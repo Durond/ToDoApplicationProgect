@@ -19,9 +19,10 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
          <Label Content="Введите пользователя" Foreground="White" Margin="10,25,600,0"/>
-        <TextBox HorizontalAlignment="Left" Grid.Row="1"   VerticalAlignment="Bottom" Name="Filtertextb" TextChanged="changename" Height="25" Width="200" Margin="0,0,0,25"/>
-        <Label Content="Выберите статус" Foreground="White" Margin="646,25,0,25" Grid.RowSpan="2"/>
-        <ComboBox Margin="646,0,0,28" Grid.Row="1"  Name="StatusBox" DisplayMemberPath="status1" SelectionChanged="Changestatus" />
+        <TextBox HorizontalAlignment="Left" Grid.Row="1"   VerticalAlignment="Bottom" Name="Filtertextb" TextChanged="changename" Height="25" Width="200" Margin="10,0,0,25" />
+     
+        <Label Content="Выберите статус" Foreground="White" Margin="636,25,10,25" Grid.RowSpan="2"/>
+        <ComboBox Margin="636,3,10,25" Grid.Row="1"  Name="StatusBox" DisplayMemberPath="status1" SelectionChanged="Changestatus" />
 
         <TextBlock Text="Список задач" Grid.Row="0" FontSize="18" FontWeight="SemiBold"
         Foreground="#FDEAF3" HorizontalAlignment="Center" VerticalAlignment="Center" />
@@ -32,14 +33,13 @@
                 <DataGridTextColumn Header="Название" Binding="{Binding title}" Width="100"/>
                 <DataGridTextColumn Header="описание" Binding="{Binding description}" Width="170"/>
                 <DataGridTextColumn Header="приоритет" Binding="{Binding Prioritytitle}" Width="70"/>
-                <DataGridTextColumn Header="Дата завершения" Binding="{Binding due_date}" Width="*"/>
+                <DataGridTextColumn Header="Дата завершения" Binding="{Binding DateDue}" Width="*"/>
                 <DataGridTextColumn Header="Статус" Binding="{Binding Statustitle}" Width="70" />
-                <DataGridTextColumn Header="Дата создания" Binding="{Binding created_at}" Width="140"/>
+                <DataGridTextColumn Header="Дата создания" Binding="{Binding DateCreated}" Width="140"/>
             </DataGrid.Columns>
             <DataGrid.ContextMenu>
                 <ContextMenu>
                     <MenuItem Header="Создание задачи" Click="CreateTask" />
-                    <MenuItem Header="Редактирование задачи" />
                     <MenuItem Header="Удаление задачи" Click="DeleteTask"/>
 
                 </ContextMenu>

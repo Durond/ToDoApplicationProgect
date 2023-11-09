@@ -11,7 +11,9 @@ namespace ToDoApplicationProgect
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+    using System.Security.Policy;
+
     public partial class Tasks
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -24,11 +26,17 @@ namespace ToDoApplicationProgect
         public string title { get; set; }
         public string description { get; set; }
         public int priority { get; set; }
+        
         public System.DateTime due_date { get; set; }
+
+        public string DateDue { get=> due_date.ToShortDateString();  }
     
        
         public int status { get; set; }
+        
         public System.DateTime created_at { get; set; }
+        public string DateCreated { get => created_at.ToShortDateString(); }
+       
         public int user_id { get; set; }
     
         public virtual Priority Priority1 { get; set; }

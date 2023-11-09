@@ -32,7 +32,6 @@
             <DataGrid.ContextMenu>
                 <ContextMenu>
                     <MenuItem Header="Создание приоритета" Click="CreatePriority" />
-                    <MenuItem Header="Редактирование записи" Click="EditPriority"/>
                     <MenuItem Header="Удалить запись" Click="DeletePriority"/>
 
                 </ContextMenu>

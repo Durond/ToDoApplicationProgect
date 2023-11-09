@@ -44,7 +44,7 @@ namespace ToDoApplicationProgect.ShowPage
                 }
                 catch
                 {
-                    MessageBox.Show("Ошибка", "Данного пользователя нельзя удалить");
+                    MessageBox.Show("Ошибка", "У данного пользователя еще есть невыполненая задача");
                 }
             }
 

@@ -37,6 +37,7 @@ namespace ToDoApplicationProgect.AddPage
             };
             context.Users.Add(users);
             context.SaveChanges();
+            MessageBox.Show("Пользователь добавлен", "Успешно", MessageBoxButton.OK);
             NavigationService.Navigate(new ShowPage.UsersPage());
         }
 

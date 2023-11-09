@@ -14,26 +14,21 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using ToDoApplicationProgect.ShowPage;
 
-namespace ToDoApplicationProgect.EditPage
+namespace ToDoApplicationProgect.CustomErrorWindow
 {
     /// <summary>
-    /// Логика взаимодействия для EditCategoryPage.xaml
+    /// Логика взаимодействия для Successwindow.xaml
     /// </summary>
-    public partial class EditCategoryPage : Page
+    public partial class Successwindow : Window
     {
-        ToDoListEntities1 context;
-        public EditCategoryPage(ToDoListEntities1 cont, Categories categories)
+        public Successwindow()
         {
             InitializeComponent();
-            context = cont;
-            UserTextBox.ItemsSource = context.Users.ToList();
-            
         }
 
-
-        private void BackCategory(object sender, RoutedEventArgs e)
+        private void Click_Exit(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new ShowPage.CategoryPage()); 
+            Close();
         }
     }
 }

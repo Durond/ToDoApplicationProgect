@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ToDoApplicationProgect.CustomErrorWindow;
 
 namespace ToDoApplicationProgect.AddPage
 {
@@ -45,6 +46,7 @@ namespace ToDoApplicationProgect.AddPage
             };
             context.Tasks.Add(tasks);
             context.SaveChanges();
+            MessageBox.Show("Задача добавлена", "Успешно", MessageBoxButton.OK);
             NavigationService.Navigate(new ShowPage.TaskPage());
 
         }

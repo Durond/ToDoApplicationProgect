@@ -32,7 +32,6 @@
             <DataGrid.ContextMenu>
                 <ContextMenu>
                     <MenuItem Header="Создание записи" Click="CreateCategory" />
-                    <MenuItem Header="Редактирование записи" Click="EditCategory"/>
                     <MenuItem Header="Удалить запись" Click="DeleteCategory"/>  
                     
                 </ContextMenu>

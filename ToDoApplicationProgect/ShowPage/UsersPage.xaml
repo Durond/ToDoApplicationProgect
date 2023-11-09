@@ -34,7 +34,6 @@
             <DataGrid.ContextMenu>
                 <ContextMenu>
                     <MenuItem Header="Создание пользователя" Click="CreateUser" />
-                    <MenuItem Header="Редактирование пользователя" />
                     <MenuItem Header="Удаление записи" Click="DeleteUser"/>
 
                 </ContextMenu>

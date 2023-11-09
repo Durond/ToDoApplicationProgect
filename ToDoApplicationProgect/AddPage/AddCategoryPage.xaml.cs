@@ -43,6 +43,8 @@ namespace ToDoApplicationProgect.AddPage
             };
             context.Categories.Add(categories);
             context.SaveChanges();
+
+            MessageBox.Show("Категория добавлена", "Успешно", MessageBoxButton.OK);
             NavigationService.Navigate(new ShowPage.CategoryPage());
 
         }

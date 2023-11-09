@@ -36,6 +36,7 @@ namespace ToDoApplicationProgect.AddPage
             };
             context.Status.Add(status);
             context.SaveChanges();
+            MessageBox.Show("Статус добавлен", "Успешно", MessageBoxButton.OK);
             NavigationService.Navigate(new ShowPage.StatusPage());
         }
 

@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ToDoApplicationProgect.CustomErrorWindow;
 
 namespace ToDoApplicationProgect.ShowPage
 {
@@ -48,6 +49,9 @@ namespace ToDoApplicationProgect.ShowPage
                     Tasks tasks = DataGridTask.SelectedItem as Tasks;
                     context.Tasks.Remove(tasks);
                     context.SaveChanges();
+                   
+                    
+                  
                     NavigationService.Navigate(new TaskPage());
                 }
                 catch

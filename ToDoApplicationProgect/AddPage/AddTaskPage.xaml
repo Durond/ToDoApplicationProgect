@@ -39,7 +39,7 @@
             <Label Content="Пользователь" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White"/>
             <ComboBox Width="200" Height="20" VerticalAlignment="Center" Name="UserIdTextBox" HorizontalAlignment="Center" DisplayMemberPath="name"/>
             <Button Content="Добавить" Width="90" Height="33" Style="{DynamicResource AddButtonStyle}" Click="AddTask"  />
-            <Button Content="Назад" Width="84" Height="33" Style="{DynamicResource AddButtonStyle}" Click="BackTask"/>
+            <Button Content="Назад" Width="84" Height="33" Style="{DynamicResource AddButtonStyle}" Click="BackTask" RenderTransformOrigin="0.685,0.752"/>
         </StackPanel>
 
     </Grid>
