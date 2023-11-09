@@ -29,17 +29,17 @@
             <Label Content="Описание" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White"/>
             <TextBox Width="200" Height="20" VerticalAlignment="Center" Name="DescriptionTextBox" HorizontalAlignment="Center"/>
             <Label Content="приоритет задачи" HorizontalAlignment="Center" Foreground="white"/>
-            <TextBox Width="200" Height="20" Name="TaskPriorityTextbox" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <ComboBox Width="200" Height="20" Name="TaskPriorityTextbox" VerticalAlignment="Center" HorizontalAlignment="Center" DisplayMemberPath="priority1"/>
             <Label Content="Дата начала задачи" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White"/>
             <DatePicker Width="200" Height="27" Name="DatastarttaskTextbox" HorizontalAlignment="Center"/>
             <Label Content="Статус" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White"/>
-            <TextBox Width="200" Height="20" Name="TaskStatusTextBox" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <ComboBox Width="200" Height="20" Name="TaskStatusTextBox" VerticalAlignment="Center" HorizontalAlignment="Center" DisplayMemberPath="status1"/>
             <Label Content="Дата создания задачи" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White"/>
             <DatePicker Width="200" Height="32" Name="DatataskcreateTextBox" HorizontalAlignment="Center"/>
             <Label Content="Пользователь" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White"/>
-            <TextBox Width="200" Height="20" VerticalAlignment="Center" Name="UserIdTextBox" HorizontalAlignment="Center"/>
+            <ComboBox Width="200" Height="20" VerticalAlignment="Center" Name="UserIdTextBox" HorizontalAlignment="Center" DisplayMemberPath="name"/>
             <Button Content="Добавить" Width="90" Height="33" Style="{DynamicResource AddButtonStyle}" Click="AddTask"  />
-            <Button Content="Назад" Width="90" Height="33" Style="{DynamicResource AddButtonStyle}" Click="BackTask"/>
+            <Button Content="Назад" Width="84" Height="33" Style="{DynamicResource AddButtonStyle}" Click="BackTask"/>
         </StackPanel>
 
     </Grid>

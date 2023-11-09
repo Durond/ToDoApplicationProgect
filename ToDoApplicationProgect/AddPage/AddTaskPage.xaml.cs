@@ -25,20 +25,23 @@ namespace ToDoApplicationProgect.AddPage
         {
             InitializeComponent();
             context = cont;
+            TaskPriorityTextbox.ItemsSource = cont.Priority.ToList();
+            TaskStatusTextBox.ItemsSource = cont.Status.ToList();
+            UserIdTextBox.ItemsSource = cont.Users.ToList();
         }
 
         private void AddTask(object sender, RoutedEventArgs e)
         {
-             Tasks tasks = new Tasks
+            Tasks tasks = new Tasks()
             {
-                 id = Convert.ToInt32(taskIdTextbox.Text),
-                 title = TaskNameTextbox.Text,
-                 description=DescriptionTextBox.Text,
-                 priority =Convert.ToInt32(TaskPriorityTextbox.Text),
+                id = Convert.ToInt32(taskIdTextbox.Text),
+                title = TaskNameTextbox.Text,
+                description = DescriptionTextBox.Text,
+                priority = (TaskPriorityTextbox.SelectedItem as Priority).priorityId,
                  due_date = Convert.ToDateTime(DatastarttaskTextbox.Text),
-                 status = Convert.ToInt32(TaskStatusTextBox.Text),
+                 status = (TaskStatusTextBox.SelectedItem as Status).statusid,
                  created_at =Convert.ToDateTime(DatataskcreateTextBox.Text),
-                 user_id=Convert.ToInt32(UserIdTextBox.Text)
+                 user_id=(UserIdTextBox.SelectedItem as Users).id,
             };
             context.Tasks.Add(tasks);
             context.SaveChanges();

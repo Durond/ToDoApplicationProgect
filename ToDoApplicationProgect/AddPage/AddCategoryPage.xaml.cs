@@ -26,7 +26,7 @@ namespace ToDoApplicationProgect.AddPage
         {
             InitializeComponent();
             context = cont;
-            
+            UserTextBox.ItemsSource = cont.Users.ToList();
 
         }
 
@@ -39,7 +39,7 @@ namespace ToDoApplicationProgect.AddPage
             {
                 id = Convert.ToInt32(NumberTextbox.Text),
                 name = CategoryTextBox.Text,
-                user_id = Convert.ToInt32(UserTextBox.Text)
+                user_id = (UserTextBox.SelectedItem as Users).id,
             };
             context.Categories.Add(categories);
             context.SaveChanges();

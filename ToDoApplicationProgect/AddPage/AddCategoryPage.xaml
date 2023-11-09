@@ -28,7 +28,7 @@
             <Label Content="категория" HorizontalAlignment="Center" Foreground="white"/>
             <TextBox Name="CategoryTextBox" Width="200" Height="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             <Label Content="Пользователь" HorizontalAlignment="Center" Foreground="white"/>
-            <TextBox x:Name="UserTextBox" Width="200" Height="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <ComboBox x:Name="UserTextBox" Width="200" Height="20" VerticalAlignment="Center" HorizontalAlignment="Center" DisplayMemberPath="name"/>
             <Button Content="Добавить" Margin="20" Width="90" Height="33" Style="{DynamicResource AddButtonStyle }" Click="AddCategory"  />
             <Button Content="Назад" Width="90" Height="33" Style="{DynamicResource AddButtonStyle}" Click="BackCategory"/>
 
