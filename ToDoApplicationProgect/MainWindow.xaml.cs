@@ -64,5 +64,10 @@ namespace ToDoApplicationProgect
         {
             myFrame.Navigate(new ShowPage.StatusPage());
         }
+
+        private void ShowUsers(object sender, RoutedEventArgs e)
+        {
+            myFrame.Navigate(new ShowPage.UsersPage());
+        }
     }
 }
