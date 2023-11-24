@@ -19,6 +19,7 @@ namespace ToDoApplicationProgect.CustomErrorWindow
     /// </summary>
     public partial class Exitbox : Window
     {
+        //Обработка пользовательского окна выхода из приложения
         public Exitbox()
         {
             InitializeComponent();

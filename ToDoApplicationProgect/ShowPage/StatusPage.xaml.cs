@@ -20,20 +20,22 @@ namespace ToDoApplicationProgect.ShowPage
     /// Логика взаимодействия для StatusPage.xaml
     /// </summary>
     public partial class StatusPage : Page
-    {
-        ToDoListEntities1 context;
+    { //Работа с базой
+        qweEntities context;
         public StatusPage()
         {
             InitializeComponent();
-            context = new ToDoListEntities1();
+            context = new qweEntities();
             DataGridStatus.ItemsSource = context.Status.ToList();
         }
 
+        //Переход на страницу создания статуса
         private void CreateStatus(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new AddStatusPage(context));
         }
 
+        //Логика удаления статуса 
         private void DeleteStatus(object sender, RoutedEventArgs e)
         {
             MessageBoxResult res = MessageBox.Show("Вы уверены что хотите удалить данный статус?", "Подтверждение", MessageBoxButton.YesNo);

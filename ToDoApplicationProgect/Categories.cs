@@ -27,12 +27,11 @@ namespace ToDoApplicationProgect
         {
             get
             {
-                if (Users.ToString() == null)
+                if (user_id.ToString() == null)
                     return "";
                 else return Users.name;
             }
         }
-
 
         public virtual Users Users { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

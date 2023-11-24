@@ -21,19 +21,22 @@ namespace ToDoApplicationProgect.ShowPage
     /// </summary>
     public partial class PriorityPage : Page
     {
-        ToDoListEntities1 context;
+        //Работа с базой
+        qweEntities context;
         public PriorityPage()
         {
             InitializeComponent();
-            context = new ToDoListEntities1();
+            context = new qweEntities();
             DataGridPriority.ItemsSource = context.Priority.ToList();
         }
 
+        //переход на страниццу создания приоритета
         private void CreatePriority(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new AddPriorityPage(context));
         }
 
+        //Логика при удалении приоритета
         private void DeletePriority(object sender, RoutedEventArgs e)
         {
             MessageBoxResult res = MessageBox.Show("Вы уверены что хотите удалить данный приоритет?", "Подтверждение", MessageBoxButton.YesNo);
@@ -51,11 +54,6 @@ namespace ToDoApplicationProgect.ShowPage
                     MessageBox.Show("Ошибка", "Удаление данного приоритета удалит приоритет взаимосвзанных записей");
                 }
             }
-        }
-
-        private void EditPriority(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

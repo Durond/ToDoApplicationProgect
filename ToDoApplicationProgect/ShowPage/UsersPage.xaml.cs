@@ -20,15 +20,16 @@ namespace ToDoApplicationProgect.ShowPage
     /// Логика взаимодействия для UsersPage.xaml
     /// </summary>
     public partial class UsersPage : Page
-    {
-        ToDoListEntities1 context;
+    { //Работа с базой
+        qweEntities context;
         public UsersPage()
         {
             InitializeComponent();
-            context = new ToDoListEntities1();
+            context = new qweEntities();
             UserTable.ItemsSource = context.Users.ToList();
         }
 
+        //Логика удаления пользователя 
         private void DeleteUser(object sender, RoutedEventArgs e)
         {
 

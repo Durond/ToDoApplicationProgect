@@ -20,13 +20,15 @@ namespace ToDoApplicationProgect.AddPage
     /// </summary>
     public partial class AddUserPage : Page
     {
-        ToDoListEntities1 context;
-        public AddUserPage(ToDoListEntities1 cont)
+        qweEntities context;
+        //Работа с базой
+        public AddUserPage(qweEntities cont)
         {
             InitializeComponent();
             context = cont;
         }
 
+        //Добавление категории в базу данных
         private void AddCategory(object sender, RoutedEventArgs e)
         {
             Users users = new Users()
@@ -41,6 +43,7 @@ namespace ToDoApplicationProgect.AddPage
             NavigationService.Navigate(new ShowPage.UsersPage());
         }
 
+        //Возвращение на страницу с пользователями
         private void BackUsers(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new ShowPage.UsersPage());

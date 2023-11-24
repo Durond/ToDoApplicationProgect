@@ -19,20 +19,21 @@ namespace ToDoApplicationProgect
 {
     public partial class MainWindow : Window
     {
-        private static ToDoListEntities1 _context;
+        private static qweEntities _context;
         public MainWindow()
         {
             InitializeComponent();
         }
 
-        public static ToDoListEntities1 GetContext()
+        //Логика работы с базой данных при отсутствии базы данных
+        public static qweEntities GetContext()
         {
             if (_context == null)
-                _context = new ToDoListEntities1();
+                _context = new qweEntities();
             return _context;
         }
             
-
+        //Пользовательское окно обработки выхода
         private void Exit(object sender, RoutedEventArgs e)
         {
             Exitbox er1 = new Exitbox();
@@ -43,28 +44,31 @@ namespace ToDoApplicationProgect
         }
 
       
-
+        //переход на страницу задач
         private void ShowTask(object sender, RoutedEventArgs e)
         {
             myFrame.Navigate(new ShowPage.TaskPage());
         }
 
+        //переход на страницу категорий
         private void Category_Click(object sender, RoutedEventArgs e)
         {
            
             myFrame.Navigate(new ShowPage.CategoryPage());
         }
 
+        //переход на страницу приоритета
         private void ShowPriority(object sender, RoutedEventArgs e)
         {
             myFrame.Navigate(new ShowPage.PriorityPage());
         }
 
+        //переход на страницу статуса
         private void ShowStatus(object sender, RoutedEventArgs e)
         {
             myFrame.Navigate(new ShowPage.StatusPage());
         }
-
+        //переход на страницу пользователей
         private void ShowUsers(object sender, RoutedEventArgs e)
         {
             myFrame.Navigate(new ShowPage.UsersPage());

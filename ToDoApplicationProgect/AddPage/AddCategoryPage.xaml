@@ -25,7 +25,7 @@
         <StackPanel  Grid.Row="1" Margin="0,29,0,87" HorizontalAlignment="Center" Width="240">
             <Label Content="Номер категории" HorizontalAlignment="Center" Foreground="White"/>
             <TextBox Name="NumberTextbox" Width="200" Height="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-            <Label Content="категория" HorizontalAlignment="Center" Foreground="white"/>
+            <Label Content="Категория" HorizontalAlignment="Center" Foreground="white"/>
             <TextBox Name="CategoryTextBox" Width="200" Height="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             <Label Content="Пользователь" HorizontalAlignment="Center" Foreground="white"/>
             <ComboBox x:Name="UserTextBox" Width="200" Height="20" VerticalAlignment="Center" HorizontalAlignment="Center" DisplayMemberPath="name"/>

@@ -22,13 +22,13 @@
         </StackPanel>
 
         <StackPanel  Grid.Row="1" Margin="0,10,0,-45" HorizontalAlignment="Center" Width="240">
-            <Label Content="номер задачи" HorizontalAlignment="Center" Foreground="White"/>
+            <Label Content="Номер задачи" HorizontalAlignment="Center" Foreground="White"/>
             <TextBox Width="200" Name="taskIdTextbox" Height="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-            <Label Content="название" HorizontalAlignment="Center" Foreground="white"/>
+            <Label Content="Название" HorizontalAlignment="Center" Foreground="white"/>
             <TextBox Width="200" Name="TaskNameTextbox" Height="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             <Label Content="Описание" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White"/>
             <TextBox Width="200" Height="20" VerticalAlignment="Center" Name="DescriptionTextBox" HorizontalAlignment="Center"/>
-            <Label Content="приоритет задачи" HorizontalAlignment="Center" Foreground="white"/>
+            <Label Content="Приоритет задачи" HorizontalAlignment="Center" Foreground="white"/>
             <ComboBox Width="200" Height="20" Name="TaskPriorityTextbox" VerticalAlignment="Center" HorizontalAlignment="Center" DisplayMemberPath="priority1"/>
             <Label Content="Дата начала задачи" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White"/>
             <DatePicker Width="200" Height="27" Name="DatastarttaskTextbox" HorizontalAlignment="Center"/>
@@ -38,9 +38,8 @@
             <DatePicker Width="200" Height="32" Name="DatataskcreateTextBox" HorizontalAlignment="Center"/>
             <Label Content="Пользователь" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White"/>
             <ComboBox Width="200" Height="20" VerticalAlignment="Center" Name="UserIdTextBox" HorizontalAlignment="Center" DisplayMemberPath="name"/>
-            <Button Content="Добавить" Width="90" Height="33" Style="{DynamicResource AddButtonStyle}" Click="AddTask"  />
-            <Button Content="Назад" Width="84" Height="33" Style="{DynamicResource AddButtonStyle}" Click="BackTask" RenderTransformOrigin="0.685,0.752"/>
         </StackPanel>
-
+        <Button Content="Добавить" Width="NaN" Height="NaN" Style="{DynamicResource AddButtonStyle}" Click="AddTask" Margin="415,399,301,92" Grid.Row="1"  />
+        <Button Content="Назад" Width="NaN" Height="NaN" Style="{DynamicResource AddButtonStyle}" Click="BackTask" Margin="301,399,415,92" Grid.Row="1" />
     </Grid>
 </Page>

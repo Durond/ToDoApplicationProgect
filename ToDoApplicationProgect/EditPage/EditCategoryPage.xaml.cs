@@ -21,8 +21,8 @@ namespace ToDoApplicationProgect.EditPage
     /// </summary>
     public partial class EditCategoryPage : Page
     {
-        ToDoListEntities1 context;
-        public EditCategoryPage(ToDoListEntities1 cont, Categories categories)
+        qweEntities context;
+        public EditCategoryPage(qweEntities cont, Categories categories)
         {
             InitializeComponent();
             context = cont;

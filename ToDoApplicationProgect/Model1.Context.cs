@@ -13,10 +13,10 @@ namespace ToDoApplicationProgect
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class ToDoListEntities1 : DbContext
+    public partial class qweEntities : DbContext
     {
-        public ToDoListEntities1()
-            : base("name=ToDoListEntities1")
+        public qweEntities()
+            : base("name=qweEntities")
         {
         }
     
@@ -28,7 +28,6 @@ namespace ToDoApplicationProgect
         public virtual DbSet<Categories> Categories { get; set; }
         public virtual DbSet<Priority> Priority { get; set; }
         public virtual DbSet<Status> Status { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<TaskCategory> TaskCategory { get; set; }
         public virtual DbSet<Tasks> Tasks { get; set; }
         public virtual DbSet<Users> Users { get; set; }

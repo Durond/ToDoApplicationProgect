@@ -31,8 +31,8 @@
                 <DataGridTextColumn Header="#" Binding="{Binding id}" Width="25"/>
                 <DataGridTextColumn Header="Пользователь" Binding="{Binding UserName}" Width="*"/>
                 <DataGridTextColumn Header="Название" Binding="{Binding title}" Width="100"/>
-                <DataGridTextColumn Header="описание" Binding="{Binding description}" Width="170"/>
-                <DataGridTextColumn Header="приоритет" Binding="{Binding Prioritytitle}" Width="70"/>
+                <DataGridTextColumn Header="Описание" Binding="{Binding description}" Width="170"/>
+                <DataGridTextColumn Header="Приоритет" Binding="{Binding Prioritytitle}" Width="70"/>
                 <DataGridTextColumn Header="Дата завершения" Binding="{Binding DateDue}" Width="*"/>
                 <DataGridTextColumn Header="Статус" Binding="{Binding Statustitle}" Width="70" />
                 <DataGridTextColumn Header="Дата создания" Binding="{Binding DateCreated}" Width="140"/>

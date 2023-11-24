@@ -21,6 +21,8 @@ namespace ToDoApplicationProgect
         }
     
         public int priorityId { get; set; }
+        
+        //Строка для вывода париоритета в таблицу 
         public string priority1 { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

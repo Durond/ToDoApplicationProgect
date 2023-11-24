@@ -20,13 +20,15 @@ namespace ToDoApplicationProgect.AddPage
     /// </summary>
     public partial class AddPriorityPage : Page
     {
-        ToDoListEntities1 context;
-        public AddPriorityPage(ToDoListEntities1 cont)
+        //Работа с базой
+        qweEntities context;
+        public AddPriorityPage(qweEntities cont)
         {
             InitializeComponent();
             context = cont;
         }
 
+        //Добавление приоритета в базу данных
         private void AddPriority(object sender, RoutedEventArgs e)
         {
             Priority priority = new Priority()
@@ -39,7 +41,7 @@ namespace ToDoApplicationProgect.AddPage
             MessageBox.Show("Приоритет добавлен", "Успешно", MessageBoxButton.OK);
             NavigationService.Navigate(new ShowPage.PriorityPage());
         }
-
+        //Возвращение в окно приоритета
         private void BackPriority(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new ShowPage.PriorityPage());

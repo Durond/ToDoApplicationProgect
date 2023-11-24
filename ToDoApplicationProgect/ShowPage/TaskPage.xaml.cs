@@ -22,23 +22,25 @@ namespace ToDoApplicationProgect.ShowPage
     /// </summary>
     public partial class TaskPage : Page
     {
-        ToDoListEntities1 context;
+        qweEntities context;
         public TaskPage()
-        {
+        { //Выгрузка Задач в таблицу из базы данных
             InitializeComponent();
-            context = new ToDoListEntities1();
+            context = new qweEntities();
             DataGridTask.ItemsSource = context.Tasks.ToList();
 
+            //Вспомогательные функции для сортировки и фильтрации
             var statuslist = context.Status.ToList();
             statuslist.Insert(0, new Status() { status1 = "Все", statusid = 0 });
             StatusBox.ItemsSource = statuslist;
         }
-
+        //Переход на страницу создаания задачи
         private void CreateTask(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new AddPage.AddTaskPage(context));
         }
 
+        //Логика удаления задачи из базы данных
         private void DeleteTask(object sender, RoutedEventArgs e)
         {
             MessageBoxResult res = MessageBox.Show("Вы уверены что хотите удалить данную задачу?", "Подтверждение", MessageBoxButton.YesNo);
@@ -62,11 +64,11 @@ namespace ToDoApplicationProgect.ShowPage
          
         }
 
-     
 
+        //Логика обновления данных 
         public void RefreshData()
         {
-
+            //Выборка по статусу
             var list = context.Tasks.ToList();
             if(StatusBox.SelectedIndex>0)
             {
@@ -74,20 +76,23 @@ namespace ToDoApplicationProgect.ShowPage
                 list = list.Where(x => x.Status1 == stat).ToList();
             }
 
-           if(!string.IsNullOrWhiteSpace(Filtertextb.Text))
+            //Фильтрация по фамилии
+            if (!string.IsNullOrWhiteSpace(Filtertextb.Text))
             {
                 list = list.Where(x => x.UserName.ToLower().Contains(Filtertextb.Text.ToLower())).ToList();
             }
             DataGridTask.ItemsSource = list;
         }
-   
 
 
+        //Обнолвение данных при изменении имени
 
         private void changename(object sender, TextChangedEventArgs e)
         {
             RefreshData();
         }
+
+        //Обновление данных при изменении статуса
 
         private void Changestatus(object sender, SelectionChangedEventArgs e)
         {

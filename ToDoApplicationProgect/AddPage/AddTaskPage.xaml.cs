@@ -21,8 +21,10 @@ namespace ToDoApplicationProgect.AddPage
     /// </summary>
     public partial class AddTaskPage : Page
     {
-        ToDoListEntities1 context;
-        public AddTaskPage(ToDoListEntities1 cont)
+        qweEntities context;
+
+        //Работа с базой 
+        public AddTaskPage(qweEntities cont)
         {
             InitializeComponent();
             context = cont;
@@ -30,7 +32,7 @@ namespace ToDoApplicationProgect.AddPage
             TaskStatusTextBox.ItemsSource = cont.Status.ToList();
             UserIdTextBox.ItemsSource = cont.Users.ToList();
         }
-
+        //Добавление задачи в базу данных
         private void AddTask(object sender, RoutedEventArgs e)
         {
             Tasks tasks = new Tasks()
@@ -51,6 +53,7 @@ namespace ToDoApplicationProgect.AddPage
 
         }
 
+        //Возвращение на окно выбора задач
         private void BackTask(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new ShowPage.TaskPage());

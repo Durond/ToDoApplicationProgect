@@ -20,13 +20,15 @@ namespace ToDoApplicationProgect.AddPage
     /// </summary>
     public partial class AddStatusPage : Page
     {
-        ToDoListEntities1 context;
-        public AddStatusPage(ToDoListEntities1 cont)
+        //Работа с базой
+        qweEntities context;
+        public AddStatusPage(qweEntities cont)
         {
             InitializeComponent();
             context = cont;
         }
 
+        //Добавление статуса в базу данных
         private void AddStatus(object sender, RoutedEventArgs e)
         {
             Status status = new Status()
@@ -40,6 +42,7 @@ namespace ToDoApplicationProgect.AddPage
             NavigationService.Navigate(new ShowPage.StatusPage());
         }
 
+        //Возвращение к окну статуса
         private void BackStatus(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new ShowPage.StatusPage());

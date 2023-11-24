@@ -21,8 +21,8 @@ namespace ToDoApplicationProgect.AddPage
     /// </summary>
     public partial class AddCategoryPage : Page
     {
-        ToDoListEntities1 context;
-        public AddCategoryPage(ToDoListEntities1 cont)
+        qweEntities context;
+        public AddCategoryPage(qweEntities cont)
         {
             InitializeComponent();
             context = cont;
@@ -30,9 +30,9 @@ namespace ToDoApplicationProgect.AddPage
 
         }
 
-       
 
 
+        //Добавлекние категории в базу данных
         private void AddCategory(object sender, RoutedEventArgs e)
         {
             Categories categories = new Categories()
@@ -49,7 +49,7 @@ namespace ToDoApplicationProgect.AddPage
 
         }
 
-
+        //Возврат на страницу категорий 
         private void BackCategory(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new ShowPage.CategoryPage());

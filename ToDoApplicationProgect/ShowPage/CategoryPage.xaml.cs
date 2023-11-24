@@ -22,21 +22,22 @@ namespace ToDoApplicationProgect.ShowPage
     /// Логика взаимодействия для CategoryPage.xaml
     /// </summary>
     public partial class CategoryPage : Page
-    {
-        ToDoListEntities1 context;
+    { 
+        qweEntities context;
+        //Выгрузка категорий в таблицу из базы данных
         public CategoryPage()
         {
             InitializeComponent();
-            context = new ToDoListEntities1();
+            context = new qweEntities();
             CategoryTable.ItemsSource = context.Categories.ToList();
         }
-
+        //Обработка редактирования категории
         private void EditCategory(object sender, RoutedEventArgs e)
         {
             Categories categories = CategoryTable.SelectedItem as Categories;
             NavigationService.Navigate(new EditCategoryPage(context, categories));
         }
-
+        //Обработка удаления категории
         private void DeleteCategory(object sender, RoutedEventArgs e)
         {
             MessageBoxResult res = MessageBox.Show("Вы уверены что хотите удалить данную категорию?", "Подтверждение", MessageBoxButton.YesNo);
@@ -57,8 +58,8 @@ namespace ToDoApplicationProgect.ShowPage
         }
 
 
-      
 
+        //переход на страницу создания категории
         private void CreateCategory(object sender, RoutedEventArgs e)
         {
             

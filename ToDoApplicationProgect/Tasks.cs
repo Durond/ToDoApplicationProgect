@@ -11,9 +11,7 @@ namespace ToDoApplicationProgect
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    using System.Security.Policy;
-
+    
     public partial class Tasks
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,44 +19,13 @@ namespace ToDoApplicationProgect
         {
             this.TaskCategory = new HashSet<TaskCategory>();
         }
-    
-        public int id { get; set; }
-        public string title { get; set; }
-        public string description { get; set; }
-        public int priority { get; set; }
-        
+        //Свойство для вывода короткого формата данных в таблицу 
         public System.DateTime due_date { get; set; }
-
-        public string DateDue { get=> due_date.ToShortDateString();  }
-    
-       
-        public int status { get; set; }
-        
+        //Свойство для вывода короткого формата данных в таблицу 
         public System.DateTime created_at { get; set; }
-        public string DateCreated { get => created_at.ToShortDateString(); }
-       
-        public int user_id { get; set; }
-    
-        public virtual Priority Priority1 { get; set; }
 
-        public string Statustitle { 
-            get
-            {
-                if (status.ToString() == null)
-                    return "";
-                else return Status1.status1;
-            } 
-        }
-        
-        public string Prioritytitle
-        {
-            get
-            {
-                if (priority.ToString() == null)
-                    return "";
-                else return Priority1.priority1;
-            }
-        }
+        public int id { get; set; }
+        //Свойство для вывода Имени пользователя в таблицу
         public string UserName
         {
             get
@@ -68,11 +35,43 @@ namespace ToDoApplicationProgect
                 else return Users.name;
             }
         }
+        public string DateCreated { get => created_at.ToShortDateString(); }
 
+        public string DateDue { get => due_date.ToShortDateString(); }
+
+        //Свойство для вывода Статуса задачи в таблицу
+        public string Statustitle
+        {
+            get
+            {
+                if (status.ToString() == null)
+                    return "";
+                else return Status1.status1;
+            }
+        }
+
+        public string Prioritytitle
+        {
+            get
+            {
+                if (priority.ToString() == null)
+                    return "";
+                else return Priority1.priority1;
+            }
+        }
+        
+        public string title { get; set; }
+        public string description { get; set; }
+        public int priority { get; set; }
+        
+        public int status { get; set; }
+        
+        public int user_id { get; set; }
+    
+        public virtual Priority Priority1 { get; set; }
         public virtual Status Status1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TaskCategory> TaskCategory { get; set; }
         public virtual Users Users { get; set; }
-        
     }
 }
